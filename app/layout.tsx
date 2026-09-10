@@ -1,6 +1,9 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Barlow, Barlow_Condensed } from 'next/font/google'
+import { SiteFooter } from '@/components/site/site-footer'
+import { SiteHeader } from '@/components/site/site-header'
+import { TopBar } from '@/components/site/top-bar'
 import './globals.css'
 
 const barlow = Barlow({
@@ -16,17 +19,31 @@ const barlowCondensed = Barlow_Condensed({
 })
 
 export const metadata: Metadata = {
-  title: 'A/V DAVEY | Audio Visual Solutions That Just Work | Bridgeport, CT',
+  metadataBase: new URL('https://avdavey.com'),
+  title: {
+    default: 'A/V DAVEY | Audio Visual Solutions That Just Work | Bridgeport, CT',
+    template: '%s | A/V DAVEY',
+  },
   description:
-    "Connecticut's trusted AV partner since 1989. Professional AV installation, live event production and technical support serving Bridgeport, Connecticut and the greater Tri-State region.",
+    "Connecticut's trusted AV partner since 1989. AV installation and systems integration, event production and staging, video production and streaming, service and equipment sales — based in Bridgeport, serving the Tri-State.",
   generator: 'v0.app',
   keywords: [
-    'audio visual',
-    'AV installation',
-    'live event production',
-    'Bridgeport CT',
-    'Connecticut AV company',
+    'audio visual installation Connecticut',
+    'AV integration Bridgeport CT',
+    'event production Connecticut',
+    'video conferencing installation',
+    'live streaming Connecticut',
+    'AV rental Fairfield County',
+    'A/V DAVEY',
   ],
+  openGraph: {
+    type: 'website',
+    siteName: 'A/V DAVEY',
+    title: 'A/V DAVEY | Audio Visual Solutions That Just Work',
+    description:
+      'Professional AV installation, live event production and technical support. Quality equipment. Personal service. Guaranteed results.',
+    locale: 'en_US',
+  },
 }
 
 export const viewport: Viewport = {
@@ -44,8 +61,11 @@ export default function RootLayout({
       lang="en"
       className={`${barlow.variable} ${barlowCondensed.variable} bg-background`}
     >
-      <body className="font-sans antialiased">
+      <body className="min-h-dvh font-sans antialiased">
+        <TopBar />
+        <SiteHeader />
         {children}
+        <SiteFooter />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

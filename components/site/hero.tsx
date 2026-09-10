@@ -28,14 +28,14 @@ export function Hero() {
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
-              href="#contact"
+              href="/quote"
               className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3.5 font-heading text-lg font-bold tracking-wide text-accent-foreground uppercase shadow-md transition-colors hover:bg-accent/90"
             >
               Request a Quote
               <ArrowRight className="size-5" aria-hidden />
             </Link>
             <Link
-              href="#projects"
+              href="/projects"
               className="inline-flex items-center gap-2 rounded-md border-2 border-primary bg-background/60 px-6 py-3.5 font-heading text-lg font-bold tracking-wide text-primary uppercase transition-colors hover:bg-background"
             >
               <span className="flex size-6 items-center justify-center rounded-full bg-primary text-primary-foreground">
@@ -78,13 +78,21 @@ export function Hero() {
               That passion and commitment to quality still drive our team every
               day.
             </p>
-            <p
-              aria-hidden
-              className="mt-4 text-right text-3xl italic"
-              style={{ fontFamily: 'cursive' }}
-            >
-              Davey
-            </p>
+            <div className="mt-4 flex items-end justify-between gap-3">
+              <Link
+                href="/about/team"
+                className="text-xs font-semibold tracking-wider uppercase underline-offset-4 hover:underline"
+              >
+                Meet the crew
+              </Link>
+              <p
+                aria-hidden
+                className="text-3xl italic"
+                style={{ fontFamily: 'cursive' }}
+              >
+                Davey
+              </p>
+            </div>
           </div>
 
           <Image

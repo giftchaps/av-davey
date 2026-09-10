@@ -5,9 +5,8 @@ import { contact } from '@/lib/site-data'
 export function CtaBand() {
   return (
     <section
-      id="contact"
       aria-labelledby="cta-heading"
-      className="relative scroll-mt-24 overflow-hidden bg-navy-deep text-primary-foreground"
+      className="relative overflow-hidden bg-navy-deep text-primary-foreground"
     >
       <div
         aria-hidden
@@ -29,7 +28,7 @@ export function CtaBand() {
         </div>
 
         <Link
-          href={`mailto:${contact.email}?subject=Quote%20Request`}
+          href="/quote"
           className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3.5 font-heading text-lg font-bold tracking-wide text-accent-foreground uppercase shadow-md transition-colors hover:bg-accent/90"
         >
           Request a Quote

@@ -26,6 +26,7 @@ export function ServicesSection() {
         id="services-heading"
         title="Our Services"
         subtitle="Full-service audio visual solutions"
+        link={{ label: 'All services', href: '/services' }}
       />
       <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5">
         {services.map((service) => {
@@ -55,7 +56,7 @@ export function ServicesSection() {
                   {service.description}
                 </p>
                 <Link
-                  href={service.href}
+                  href={`/services/${service.slug}`}
                   className="mt-3 inline-flex items-center gap-1 text-[11px] font-bold tracking-wider text-accent uppercase hover:underline"
                 >
                   Learn more

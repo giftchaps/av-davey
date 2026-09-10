@@ -49,7 +49,7 @@ export function SiteFooter() {
 
         <nav aria-label="Quick links" className="lg:col-span-2">
           <h3 className="font-heading text-sm font-bold tracking-wider uppercase">Quick Links</h3>
-          <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-primary-foreground/85">
+          <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-sm text-primary-foreground/85 lg:grid-cols-1">
             {footerColumns.quickLinks.map((l) => (
               <li key={l.label}>
                 <Link href={l.href} className="hover:text-primary-foreground hover:underline">
@@ -100,9 +100,9 @@ export function SiteFooter() {
             <li className="flex items-start gap-2">
               <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden />
               <span>
-                {contact.location}
+                {contact.address.street}
                 <br />
-                Service Area
+                {contact.address.city}, {contact.address.state} {contact.address.zip}
               </span>
             </li>
           </ul>
@@ -112,11 +112,14 @@ export function SiteFooter() {
       <div className="border-t border-primary-foreground/15">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-1 px-4 py-3 text-xs text-primary-foreground/70 sm:px-6">
           <p>© {new Date().getFullYear()} A/V DAVEY, INC. All Rights Reserved.</p>
-          <Link href="#" className="hover:underline">
-            Terms
+          <Link href="/contact" className="hover:underline">
+            Contact
           </Link>
-          <Link href="#" className="hover:underline">
-            Site Map
+          <Link href="/about/history" className="hover:underline">
+            Our History
+          </Link>
+          <Link href="/support" className="hover:underline">
+            Support
           </Link>
         </div>
       </div>
