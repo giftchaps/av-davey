@@ -17,7 +17,7 @@ const icons = {
 
 export function StatsBar() {
   return (
-    <section aria-label="Why choose A/V DAVEY" className="relative z-30 -mt-16 px-4 sm:px-6">
+    <section aria-label="Why choose A/V DAVEY" className="relative z-20 -mt-16 px-4 sm:px-6">
       <ul className="mx-auto grid max-w-6xl grid-cols-1 divide-y rounded-lg border bg-card shadow-lg sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-5 [&>li:nth-child(odd)]:sm:border-l-0 [&>li:nth-child(n+3)]:sm:border-t lg:[&>li:nth-child(n+3)]:border-t-0">
         {stats.map((stat) => {
           const Icon = icons[stat.icon]

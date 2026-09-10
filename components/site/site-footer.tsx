@@ -31,14 +31,14 @@ export function SiteFooter() {
                   rel="noreferrer"
                   className="flex size-8 items-center justify-center rounded-md hover:bg-primary-foreground/10"
                 >
-                  {/* Social marks served by theSVG.org */}
+                  {/* Social marks served by theSVG.org; brightness-0 + invert renders them white */}
                   <img
-                    src={`https://thesvg.org/icons/${s.slug}/mono.svg`}
+                    src={`https://thesvg.org/icons/${s.slug}/default.svg`}
                     alt=""
                     width={20}
                     height={20}
                     loading="lazy"
-                    className="size-5 invert"
+                    className="size-5 brightness-0 invert"
                   />
                   <span className="sr-only">{s.name}</span>
                 </a>

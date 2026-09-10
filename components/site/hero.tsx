@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden bg-[linear-gradient(180deg,var(--sky)_0%,var(--sky-light)_70%,var(--background)_100%)]"
+      className="relative z-30 bg-[linear-gradient(180deg,var(--sky)_0%,var(--sky-light)_70%,var(--background)_100%)]"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 pt-10 pb-24 sm:px-6 lg:grid-cols-12 lg:items-center lg:gap-6 lg:pt-8 lg:pb-28">
         {/* Copy */}
@@ -47,23 +47,23 @@ export function Hero() {
         </div>
 
         {/* Badge */}
-        <div className="flex justify-center lg:col-span-2 lg:justify-center">
+        <div className="flex justify-center lg:col-span-2 lg:justify-start">
           <Image
             src="/images/avators-badge.png"
             alt="A/V-ATORS badge: First to show, last to go. Honor those who serve."
             width={300}
             height={300}
             priority
-            className="w-56 mix-blend-multiply drop-shadow-lg sm:w-64 lg:w-full lg:max-w-[300px]"
+            className="w-56 drop-shadow-lg sm:w-64 lg:w-full lg:max-w-[300px]"
           />
         </div>
 
         {/* Caricature + bio card */}
-        <div className="relative flex min-h-[380px] items-end justify-center lg:col-span-5 lg:min-h-[420px] lg:justify-end">
+        <div className="relative flex flex-col items-center gap-6 lg:col-span-5 lg:block lg:min-h-[440px] lg:self-stretch">
           <div
-            className="relative z-10 w-full max-w-sm self-start bg-primary/90 px-7 py-6 text-primary-foreground shadow-xl backdrop-blur-sm lg:mt-4 lg:ml-auto lg:max-w-[320px]"
+            className="relative z-10 w-full max-w-sm bg-primary/90 px-6 py-6 text-primary-foreground shadow-xl backdrop-blur-sm lg:absolute lg:top-0 lg:right-0 lg:w-[270px] xl:w-[300px] xl:px-7"
             style={{
-              clipPath: 'polygon(6% 0, 100% 0, 100% 100%, 0 100%, 0 12%)',
+              clipPath: 'polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 14%)',
             }}
           >
             <h2 className="font-heading text-3xl font-bold">Davey Katz</h2>
@@ -93,13 +93,7 @@ export function Hero() {
             width={560}
             height={560}
             priority
-            className="pointer-events-none absolute bottom-0 left-1/2 z-20 w-[300px] -translate-x-1/2 sm:w-[340px] lg:left-0 lg:w-[400px] lg:-translate-x-[15%] xl:w-[440px]"
-            style={{
-              maskImage:
-                'radial-gradient(ellipse 60% 75% at 50% 45%, black 60%, transparent 100%)',
-              WebkitMaskImage:
-                'radial-gradient(ellipse 60% 75% at 50% 45%, black 60%, transparent 100%)',
-            }}
+            className="pointer-events-none z-20 w-[260px] drop-shadow-xl sm:w-[300px] lg:absolute lg:right-[215px] lg:-bottom-[84px] lg:w-[320px] xl:right-[235px] xl:w-[350px]"
           />
         </div>
       </div>
