@@ -2,12 +2,18 @@ import Link from 'next/link'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { contact, footerColumns } from '@/lib/site-data'
 import { Logo } from './logo'
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  YouTubeIcon,
+} from './social-icons'
 
 const socials = [
-  { name: 'Facebook', slug: 'facebook', href: 'https://facebook.com' },
-  { name: 'LinkedIn', slug: 'linkedin', href: 'https://linkedin.com' },
-  { name: 'Instagram', slug: 'instagram', href: 'https://instagram.com' },
-  { name: 'YouTube', slug: 'youtube', href: 'https://youtube.com' },
+  { name: 'Facebook', Icon: FacebookIcon, href: 'https://facebook.com' },
+  { name: 'LinkedIn', Icon: LinkedInIcon, href: 'https://linkedin.com' },
+  { name: 'Instagram', Icon: InstagramIcon, href: 'https://instagram.com' },
+  { name: 'YouTube', Icon: YouTubeIcon, href: 'https://youtube.com' },
 ]
 
 export function SiteFooter() {
@@ -31,15 +37,7 @@ export function SiteFooter() {
                   rel="noreferrer"
                   className="flex size-8 items-center justify-center rounded-md hover:bg-primary-foreground/10"
                 >
-                  {/* Social marks served by theSVG.org; brightness-0 + invert renders them white */}
-                  <img
-                    src={`https://thesvg.org/icons/${s.slug}/default.svg`}
-                    alt=""
-                    width={20}
-                    height={20}
-                    loading="lazy"
-                    className="size-5 brightness-0 invert"
-                  />
+                  <s.Icon className="size-5" />
                   <span className="sr-only">{s.name}</span>
                 </a>
               </li>
