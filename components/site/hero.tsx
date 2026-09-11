@@ -47,14 +47,14 @@ export function Hero() {
         </div>
 
         {/* Caricature */}
-        <div className="relative flex items-end justify-center lg:col-span-6 lg:justify-end">
+        <div className="relative flex min-w-0 items-end justify-center lg:col-span-6 lg:justify-end lg:pr-4">
           <Image
             src="/images/davey-caricature.png"
             alt="Cartoon illustration of Davey Katz in an A/V DAVEY cap and polo giving a thumbs up while leaning on a branded road case"
             width={1150}
             height={1089}
             priority
-            className="pointer-events-none relative z-30 w-[340px] drop-shadow-xl sm:w-[420px] lg:-mr-4 lg:mb-2 lg:w-[400px] xl:w-[470px]"
+            className="pointer-events-none relative z-30 w-full max-w-[340px] drop-shadow-xl sm:max-w-[420px] lg:mb-2 lg:max-w-[400px] xl:max-w-[470px]"
           />
         </div>
       </div>
