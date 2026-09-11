@@ -8,16 +8,16 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="relative z-30 bg-[linear-gradient(180deg,var(--sky)_0%,var(--sky-light)_70%,var(--background)_100%)]"
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 pt-10 pb-24 sm:px-6 lg:grid-cols-12 lg:items-center lg:gap-6 lg:pt-8 lg:pb-28">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 pt-10 pb-24 sm:px-6 lg:grid-cols-12 lg:items-center lg:gap-4 lg:pt-8 lg:pb-24">
         {/* Copy */}
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-4">
           <p className="flex items-center gap-2 text-sm font-semibold tracking-wide text-primary uppercase">
             <span className="h-0.5 w-5 bg-accent" aria-hidden />
             Connecticut&apos;s Trusted AV Partner
           </p>
           <h1
             id="hero-heading"
-            className="mt-3 font-heading text-5xl leading-[0.95] font-extrabold tracking-tight text-balance uppercase sm:text-6xl lg:text-[64px]"
+            className="mt-3 font-heading text-5xl leading-[0.95] font-extrabold tracking-tight text-balance uppercase sm:text-6xl lg:text-[56px] xl:text-[64px]"
           >
             <span className="block text-primary">Audio Visual Solutions</span>
             <span className="block text-accent">That Just Work.</span>
@@ -47,21 +47,21 @@ export function Hero() {
         </div>
 
         {/* Badge */}
-        <div className="flex justify-center lg:col-span-2 lg:justify-start">
+        <div className="flex justify-center lg:col-span-1 lg:justify-start lg:self-start lg:pt-2">
           <Image
             src="/images/avators-badge.png"
             alt="A/V-ATORS badge: First to show, last to go. Honor those who serve."
             width={300}
             height={300}
             priority
-            className="w-56 drop-shadow-lg sm:w-64 lg:w-full lg:max-w-[300px]"
+            className="w-56 drop-shadow-lg sm:w-64 lg:w-[180px] lg:max-w-none xl:w-[210px]"
           />
         </div>
 
         {/* Caricature + bio card */}
-        <div className="relative flex flex-col items-center gap-6 lg:col-span-5 lg:block lg:min-h-[400px] lg:self-stretch">
+        <div className="relative flex flex-col items-center gap-6 lg:col-span-7 lg:block lg:min-h-[440px] lg:self-stretch">
           <div
-            className="relative z-10 w-full max-w-sm bg-primary/90 px-6 py-6 text-primary-foreground shadow-xl backdrop-blur-sm lg:absolute lg:top-0 lg:right-0 lg:w-[270px] xl:w-[300px] xl:px-7"
+            className="relative z-10 w-full max-w-sm bg-primary/90 px-6 py-6 text-primary-foreground shadow-xl backdrop-blur-sm lg:absolute lg:top-0 lg:right-0 lg:w-[240px] xl:w-[280px] xl:px-7"
             style={{
               clipPath: 'polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 14%)',
             }}
@@ -97,11 +97,11 @@ export function Hero() {
 
           <Image
             src="/images/davey-caricature.png"
-            alt="Caricature illustration of Davey Katz, CEO of A/V DAVEY, smiling in a striped shirt"
-            width={560}
-            height={560}
+            alt="Cartoon illustration of Davey Katz in an A/V DAVEY cap and polo giving a thumbs up while leaning on a branded road case"
+            width={1150}
+            height={1089}
             priority
-            className="pointer-events-none z-20 w-[240px] drop-shadow-xl sm:w-[280px] lg:absolute lg:right-[220px] lg:-bottom-[26px] lg:w-[280px] xl:right-[250px] xl:w-[310px]"
+            className="pointer-events-none z-20 w-[320px] drop-shadow-xl sm:w-[380px] lg:absolute lg:-bottom-6 lg:left-2 lg:w-[400px] xl:left-0 xl:w-[460px]"
           />
         </div>
       </div>
