@@ -44,27 +44,10 @@ export function Hero() {
               Explore Our Work
             </Link>
           </div>
-          <p className="mt-6 text-sm text-primary/80">
-            Founded by Davey Katz in 1989.{' '}
-            <Link
-              href="/about/team"
-              className="font-semibold text-primary underline-offset-4 hover:underline"
-            >
-              Meet the crew
-            </Link>
-          </p>
         </div>
 
-        {/* Badge + caricature */}
-        <div className="relative flex flex-col items-center gap-6 lg:col-span-6 lg:flex-row lg:items-end lg:justify-end lg:gap-0">
-          <Image
-            src="/images/avators-badge.png"
-            alt="A/V-ATORS badge: First to show, last to go. Honor those who serve."
-            width={300}
-            height={300}
-            priority
-            className="w-40 drop-shadow-lg sm:w-48 lg:mb-20 lg:w-[170px] lg:shrink-0 xl:w-[200px]"
-          />
+        {/* Caricature */}
+        <div className="relative flex items-end justify-center lg:col-span-6 lg:justify-end">
           <Image
             src="/images/davey-caricature.png"
             alt="Cartoon illustration of Davey Katz in an A/V DAVEY cap and polo giving a thumbs up while leaning on a branded road case"
