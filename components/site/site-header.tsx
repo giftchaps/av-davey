@@ -19,10 +19,12 @@ export function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const [expanded, setExpanded] = useState<string | null>(null)
+  const [flyout, setFlyout] = useState<string | null>(null)
 
   useEffect(() => {
     setOpen(false)
     setExpanded(null)
+    setFlyout(null)
   }, [pathname])
 
   return (
@@ -35,11 +37,36 @@ export function SiteHeader() {
             {navigation.primary.map((item) => {
               const active = isActive(pathname, item)
               const hasChildren = 'children' in item && item.children
+              const isOpen = flyout === item.label
               return (
-                <li key={item.label} className="group relative">
+                <li
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={hasChildren ? () => setFlyout(item.label) : undefined}
+                  onMouseLeave={hasChildren ? () => setFlyout(null) : undefined}
+                  onFocus={hasChildren ? () => setFlyout(item.label) : undefined}
+                  onBlur={
+                    hasChildren
+                      ? (e) => {
+                          if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                            setFlyout(null)
+                          }
+                        }
+                      : undefined
+                  }
+                  onKeyDown={
+                    hasChildren
+                      ? (e) => {
+                          if (e.key === 'Escape') setFlyout(null)
+                        }
+                      : undefined
+                  }
+                >
                   <Link
                     href={item.href}
                     aria-current={active ? 'page' : undefined}
+                    aria-haspopup={hasChildren ? 'menu' : undefined}
+                    aria-expanded={hasChildren ? isOpen : undefined}
                     className={cn(
                       'flex items-center gap-1 border-b-2 py-1 text-[17px] font-medium transition-colors hover:text-accent',
                       active
@@ -50,14 +77,19 @@ export function SiteHeader() {
                     {item.label}
                     {hasChildren && (
                       <ChevronDown
-                        className="size-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
+                        className={cn('size-4 transition-transform', isOpen && 'rotate-180')}
                         aria-hidden
                       />
                     )}
                   </Link>
 
                   {hasChildren && (
-                    <div className="invisible absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <div
+                      className={cn(
+                        'absolute top-full left-1/2 z-50 -translate-x-1/2 pt-3 transition-opacity',
+                        isOpen ? 'visible opacity-100' : 'invisible opacity-0',
+                      )}
+                    >
                       <ul className="w-[340px] rounded-md border bg-popover p-2 text-popover-foreground shadow-xl">
                         {item.children.map((child) => (
                           <li key={child.href}>

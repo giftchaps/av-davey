@@ -59,7 +59,7 @@ export function Hero() {
         </div>
 
         {/* Caricature + bio card */}
-        <div className="relative flex flex-col items-center gap-6 lg:col-span-5 lg:block lg:min-h-[440px] lg:self-stretch">
+        <div className="relative flex flex-col items-center gap-6 lg:col-span-5 lg:block lg:min-h-[400px] lg:self-stretch">
           <div
             className="relative z-10 w-full max-w-sm bg-primary/90 px-6 py-6 text-primary-foreground shadow-xl backdrop-blur-sm lg:absolute lg:top-0 lg:right-0 lg:w-[270px] xl:w-[300px] xl:px-7"
             style={{
@@ -101,7 +101,7 @@ export function Hero() {
             width={560}
             height={560}
             priority
-            className="pointer-events-none z-20 w-[260px] drop-shadow-xl sm:w-[300px] lg:absolute lg:right-[215px] lg:-bottom-[84px] lg:w-[320px] xl:right-[235px] xl:w-[350px]"
+            className="pointer-events-none z-20 w-[240px] drop-shadow-xl sm:w-[280px] lg:absolute lg:right-[220px] lg:-bottom-[26px] lg:w-[280px] xl:right-[250px] xl:w-[310px]"
           />
         </div>
       </div>
