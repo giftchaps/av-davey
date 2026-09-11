@@ -50,11 +50,11 @@ export function Hero() {
         <div className="relative flex min-w-0 items-end justify-center lg:col-span-6 lg:justify-end lg:pr-4">
           <Image
             src="/images/davey-caricature.png"
-            alt="Cartoon illustration of Davey Katz in an A/V DAVEY cap and polo giving a thumbs up while leaning on a branded road case"
-            width={1150}
-            height={1089}
+            alt="Cartoon illustration of Davey Katz giving a thumbs up while leaning on an A/V DAVEY road case, with the words: Same passion. Same personal service. Still here for you."
+            width={1284}
+            height={1091}
             priority
-            className="pointer-events-none relative z-30 w-full max-w-[340px] drop-shadow-xl sm:max-w-[420px] lg:mb-2 lg:max-w-[400px] xl:max-w-[470px]"
+            className="pointer-events-none relative z-30 w-full max-w-[360px] drop-shadow-xl sm:max-w-[460px] lg:mb-2 lg:max-w-[480px] xl:max-w-[560px]"
           />
         </div>
       </div>
