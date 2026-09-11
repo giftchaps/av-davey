@@ -6,37 +6,37 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative z-30 bg-[linear-gradient(180deg,var(--sky)_0%,var(--sky-light)_70%,var(--background)_100%)]"
+      className="relative bg-[linear-gradient(180deg,var(--sky)_0%,var(--sky-light)_70%,var(--background)_100%)]"
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 pt-10 pb-24 sm:px-6 lg:grid-cols-12 lg:items-center lg:gap-4 lg:pt-8 lg:pb-24">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 pt-10 pb-24 sm:px-6 lg:grid-cols-12 lg:items-end lg:gap-6 lg:pt-10 lg:pb-0">
         {/* Copy */}
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-6 lg:self-center lg:pb-20">
           <p className="flex items-center gap-2 text-sm font-semibold tracking-wide text-primary uppercase">
             <span className="h-0.5 w-5 bg-accent" aria-hidden />
             Connecticut&apos;s Trusted AV Partner
           </p>
           <h1
             id="hero-heading"
-            className="mt-3 font-heading text-5xl leading-[0.95] font-extrabold tracking-tight text-balance uppercase sm:text-6xl lg:text-[56px] xl:text-[64px]"
+            className="mt-3 font-heading text-5xl leading-[0.95] font-extrabold tracking-tight text-balance uppercase sm:text-6xl xl:text-[68px]"
           >
             <span className="block text-primary">Audio Visual Solutions</span>
             <span className="block text-accent">That Just Work.</span>
           </h1>
-          <p className="mt-5 max-w-md text-lg leading-relaxed text-foreground">
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-foreground">
             Professional AV installation, live event production and technical
             support. Quality equipment. Personal service. Guaranteed results.
           </p>
-          <div className="mt-7 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href="/quote"
-              className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3.5 font-heading text-lg font-bold tracking-wide text-accent-foreground uppercase shadow-md transition-colors hover:bg-accent/90"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-3.5 font-heading text-lg font-bold tracking-wide text-accent-foreground uppercase shadow-md transition-colors hover:bg-accent/90"
             >
               Request a Quote
               <ArrowRight className="size-5" aria-hidden />
             </Link>
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 rounded-md border-2 border-primary bg-background/60 px-6 py-3.5 font-heading text-lg font-bold tracking-wide text-primary uppercase transition-colors hover:bg-background"
+              className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-primary bg-background/60 px-6 py-3.5 font-heading text-lg font-bold tracking-wide text-primary uppercase transition-colors hover:bg-background"
             >
               <span className="flex size-6 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 <Play className="size-3 fill-current" aria-hidden />
@@ -44,64 +44,34 @@ export function Hero() {
               Explore Our Work
             </Link>
           </div>
+          <p className="mt-6 text-sm text-primary/80">
+            Founded by Davey Katz in 1989.{' '}
+            <Link
+              href="/about/team"
+              className="font-semibold text-primary underline-offset-4 hover:underline"
+            >
+              Meet the crew
+            </Link>
+          </p>
         </div>
 
-        {/* Badge */}
-        <div className="flex justify-center lg:col-span-1 lg:justify-start lg:self-start lg:pt-2">
+        {/* Badge + caricature */}
+        <div className="relative flex flex-col items-center gap-6 lg:col-span-6 lg:flex-row lg:items-end lg:justify-end lg:gap-0">
           <Image
             src="/images/avators-badge.png"
             alt="A/V-ATORS badge: First to show, last to go. Honor those who serve."
             width={300}
             height={300}
             priority
-            className="w-56 drop-shadow-lg sm:w-64 lg:w-[180px] lg:max-w-none xl:w-[210px]"
+            className="w-40 drop-shadow-lg sm:w-48 lg:mb-20 lg:w-[170px] lg:shrink-0 xl:w-[200px]"
           />
-        </div>
-
-        {/* Caricature + bio card */}
-        <div className="relative flex flex-col items-center gap-6 lg:col-span-7 lg:block lg:min-h-[440px] lg:self-stretch">
-          <div
-            className="relative z-10 w-full max-w-sm bg-primary/90 px-6 py-6 text-primary-foreground shadow-xl backdrop-blur-sm lg:absolute lg:top-0 lg:right-0 lg:w-[240px] xl:w-[280px] xl:px-7"
-            style={{
-              clipPath: 'polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 14%)',
-            }}
-          >
-            <h2 className="font-heading text-3xl font-bold">Davey Katz</h2>
-            <p className="font-semibold text-[oklch(0.72_0.19_25)]">
-              CEO / Head Cheerleader
-            </p>
-            <p className="mt-3 text-sm leading-relaxed">
-              Founded A/V DAVEY in 1989 with one goal — treat every client like
-              family and every project like it&apos;s our own.
-            </p>
-            <p className="mt-2 text-sm leading-relaxed">
-              That passion and commitment to quality still drive our team every
-              day.
-            </p>
-            <div className="mt-4 flex items-end justify-between gap-3">
-              <Link
-                href="/about/team"
-                className="text-xs font-semibold tracking-wider uppercase underline-offset-4 hover:underline"
-              >
-                Meet the crew
-              </Link>
-              <p
-                aria-hidden
-                className="text-3xl italic"
-                style={{ fontFamily: 'cursive' }}
-              >
-                Davey
-              </p>
-            </div>
-          </div>
-
           <Image
             src="/images/davey-caricature.png"
             alt="Cartoon illustration of Davey Katz in an A/V DAVEY cap and polo giving a thumbs up while leaning on a branded road case"
             width={1150}
             height={1089}
             priority
-            className="pointer-events-none z-20 w-[320px] drop-shadow-xl sm:w-[380px] lg:absolute lg:-bottom-6 lg:left-2 lg:w-[400px] xl:left-0 xl:w-[460px]"
+            className="pointer-events-none relative z-30 w-[340px] drop-shadow-xl sm:w-[420px] lg:-mr-4 lg:mb-2 lg:w-[400px] xl:w-[470px]"
           />
         </div>
       </div>
